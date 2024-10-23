@@ -1,5 +1,7 @@
 
+
 .main-login{
+
 	width: 350px;
 	height: 500px;
 	background: red;
@@ -29,18 +31,22 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
+
 .input{
 	width: 60%;
 	height: 20px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
-	margin: 20px auto;
+	margin: 5px auto;
 	padding: 10px;
 	border: none;
 	outline: none;
 	border-radius: 5px;
 }
+
+	
+
 .login-button{
 	width: 60%;
 	height: 40px;
@@ -81,4 +87,16 @@ label{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+
+
+.input-container{
+	margin-bottom: 10px;
+}
+
+.error-container {
+	height: 14px;
+	margin-left: 18%;
+	font-size: 12px;
+	color: red;
 }

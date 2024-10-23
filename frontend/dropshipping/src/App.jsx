@@ -9,18 +9,24 @@ const App = () => {
 
   const [user,setUser] = useState(null)
 
-  const createUser = async (user) => {
+  const createUser = async (user,handleError) => {
      
 
-    const result = await userService.create(user)
+    const result = await userService.create(user,handleError)
 
-    console.log(result)
-    
+    if(result){
+      alert("successfully created the account, you can login now")
+    } else {
+      return result 
+    }
+
+
+
   }
 
-  const loginUser = async (user) => {
+  const loginUser = async (user,handleLoginError) => {
 
-    const result = await userService.login(user)
+    const result = await userService.login(user,handleLoginError)
 
     if(result){
       alert("Successfully logged in")
