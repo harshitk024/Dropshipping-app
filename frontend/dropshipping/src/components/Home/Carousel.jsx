@@ -1,34 +1,70 @@
-import myImage from "../../assets/wallhaven-l8x1pr_1920x1080.png"
-import myImage2 from "../../assets/pic.png"
-import myImage3 from "../../assets/wallhaven-3lv8j6_1600x900.png"
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+import myImage1 from "../../assets/keagan-henman-ufuk99QfQTg-unsplash.jpg"
+import myImage2 from "../../assets/nimble-made-NS2BZsGxOLE-unsplash.jpg"
+import myImage3 from "../../assets/parker-burchfield-tvG4WvjgsEY-unsplash.jpg"
 
-import { useEffect } from "react";
 
-const SlideShow = () => {
-
-
+const SwiperSlideshow = () => {
   return (
+
     <>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item ">
-      <img class="d-block w-100 active" src={myImage} alt="First slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src= {myImage2} alt="Second slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src={myImage3} alt="Third slide"/>
-    </div>
-  </div>
-</div>
+    <div style= {{position: "relative"}}>
+    <Swiper
+      modules={[Navigation, Pagination,Autoplay]}
+      spaceBetween={50}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      style={{
+        
+        width: '100%',
+        height: '100%',
+        objectFit: "cover"
+      }}
+      autoplay={{ delay: 3000 }}
+      loop={true}
+    >
+      <SwiperSlide><img src = {myImage1} alt="Slide 1" /></SwiperSlide>
+      <SwiperSlide><img src={myImage2} alt="Slide 2" /></SwiperSlide>
+      <SwiperSlide><img src={myImage3} alt="Slide 3" /></SwiperSlide>
+    </Swiper>
+
+
+    <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity as needed
+          zIndex: 1,
+        }}
+      ></div>
+
+    <div style={{
+          position: 'absolute',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "2rem",
+          transform: 'translate(-50%, -50%)',
+          textAlign: 'center',
+          zIndex: 2,
+        }} className='slide-info'>
+        <h2 id = "slide-header" style={{fontFamily: "Anton SC"}}>Welcome to Gozai<span style={{color: "lightgreen"}}>Store</span></h2>
+        <div id = "slide-description">
+         Discover a world of incredible products, all handpicked for quality and style, right here at Gozaistore. We bring you the best in modern essentials, from the latest tech gadgets to chic home decor, stylish fashion, and unique finds—all delivered straight to your door with just a click.
+        </div>
+     </div>
+     </div>
     </>
   );
 };
 
-export default SlideShow;
+export default SwiperSlideshow;

@@ -1,3 +1,60 @@
 img {
     height: 90vh;
+    width: 100%;
+}
+
+#icons {
+    display: flex;
+    gap: 10px;
+}
+
+#navbar{
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+#header {
+    font-family: "Anton SC";
+    font-size: 3rem;
+}
+
+#store{
+    color: greenyellow;
+}
+
+.slide-info{
+
+    color: white;
+}
+
+@media (min-width: 575px){
+
+    .slide-info {
+
+        top: 40%;
+        left: 25%;
+
+    }
+
+    #slide-description{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 575px){
+
+    .slide-info{
+
+        top: 50%;
+        left: 50%
+    }
+
+    #slide-description{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+
 }

@@ -36,6 +36,11 @@
 
             return response.status(400).send({error: error})
             
+        } else if (error.name === "TokenExpiredError"){
+
+            return response.status(401).json({
+                error: "token expired"
+            })
         }
     }
 
