@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "save-database": "node ./models/saveProducts.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",

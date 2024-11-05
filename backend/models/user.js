@@ -10,7 +10,12 @@ const userSchema = new mongoose.Schema({
     },
     email: String,
     passwordHash: String,
-
+    cart: [
+        {
+          product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+          quantity: { type: Number, default: 1 },
+        }
+    ],
 })
 
 

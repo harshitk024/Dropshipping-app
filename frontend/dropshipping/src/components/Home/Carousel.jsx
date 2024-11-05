@@ -61,6 +61,9 @@ const SwiperSlideshow = () => {
         <div id = "slide-description">
          Discover a world of incredible products, all handpicked for quality and style, right here at Gozaistore. We bring you the best in modern essentials, from the latest tech gadgets to chic home decor, stylish fashion, and unique finds—all delivered straight to your door with just a click.
         </div>
+        <div style={{marginTop: "10px",fontWeight: "600", fontFamily: "Roboto",fontStyle: "italic"}}>
+          Shop smart, Shop Easy.
+        </div>
      </div>
      </div>
     </>

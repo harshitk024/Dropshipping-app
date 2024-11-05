@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
-
-
-
+import { useNavigate } from "react-router-dom";
 
 const Input = ({
   type,
@@ -65,6 +63,8 @@ const LoginForm = ({handleFilter,loginUser}) => {
       username: "",
       password: "",
     });
+
+
 
 
   };
@@ -141,6 +141,7 @@ const SignupForm = ({createUser,handleFilter}) => {
   )
 }
 const Login = ({ createUser, loginUser }) => {
+
   useEffect(() => {
     const style = document.createElement("style");
 

@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
+import {Routes, Route, Link, Navigate, useNavigate} from "react-router-dom"
 import "./components/Styles/Login.css"
 import './App.css'
 import Login from "./components/Login"
 import userService from "./services/users"
 import Home from './components/Home/HomePage'
+import Cart from "./components/Cart"
+import Favorite from "./components/Favorite"
+
 
 const App = () => {
 
   const [user,setUser] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -18,6 +23,7 @@ const App = () => {
     }
 
   })
+
 
 
   const createUser = async (user,handleError) => {
@@ -43,8 +49,8 @@ const App = () => {
       alert("Successfully logged in")
       setUser(result)
       window.localStorage.setItem("user",user)
+      navigate("/")
     }
-
 
     console.log(result)
   }
@@ -55,10 +61,14 @@ const App = () => {
     window.localStorage.removeItem("user")
   }
 
-
   return (
     <>
-    {user === null ? <Login createUser={createUser} loginUser={loginUser} /> : <Home  logoutUser = {logoutUser} />}
+    <Routes>
+      <Route path='/' element = {user ? <Home /> : <Navigate replace to = "/login" />} />
+      <Route path= "/login" element = {<Login createUser={createUser} loginUser={loginUser} user = {user} />} />
+      <Route path = "/cart" element = {<Cart />} />
+      <Route path = "/fav" element= {<Favorite />} />
+    </Routes>
     </>
   )
 }
